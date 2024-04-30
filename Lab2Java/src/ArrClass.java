@@ -17,7 +17,7 @@ public class ArrClass {
         arr[minIndex] = -1; // Встановлення мінімального значення
     }
 
-    public int partMin(int startIndex, int finishIndex) {
+    public int partMin(int startIndex, int finishIndex) { //Знаходження мінімального значення
         int min = Integer.MAX_VALUE; // Ініціалізуємо мінімальне значення як найбільше можливе
         for (int i = startIndex; i < finishIndex; i++) {
             if (arr[i] < min) {
@@ -29,7 +29,7 @@ public class ArrClass {
 
     private int min = Integer.MAX_VALUE;
 
-    synchronized private int getMin() {
+    synchronized private int getMin() { //Глобальне мінімальне значення
         while (getThreadCount() < threadNum) {
             try {
                 wait();
@@ -40,7 +40,7 @@ public class ArrClass {
         return min;
     }
 
-    synchronized public void collectMin(int min) {
+    synchronized public void collectMin(int min) {//Передача в ArrClass
         if (min < this.min) {
             this.min = min;
         }
@@ -48,7 +48,7 @@ public class ArrClass {
 
     private int threadCount = 0;
 
-    synchronized public void incThreadCount() {
+    synchronized public void incThreadCount() {//Збільшення лічильника птоків
         threadCount++;
         notify();
     }
