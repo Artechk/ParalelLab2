@@ -9,10 +9,15 @@ public class Main {
         long startTime = System.nanoTime();
         int min = arrClass.threadMin();
         long endTime = System.nanoTime();
+        int index = arrClass.findIndex(arrClass.arr,min);
 
         double durationMilliseconds = (endTime - startTime) / 1e6;
 
+
+
         System.out.println("Мінімальний елемент: " + min);
         System.out.println("Час виконання: " + durationMilliseconds + " мс");
+        System.out.println("Index: " + index);
+
     }
 }
