@@ -46,6 +46,15 @@ public class ArrClass {
         }
     }
 
+    public  int findIndex(int[] arr,int minValue){
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i] == minValue){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     private int threadCount = 0;
 
     synchronized public void incThreadCount() {//Збільшення лічильника птоків
